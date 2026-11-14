@@ -1,0 +1,57 @@
+{
+  "name": "dsh-github",
+  "version": "1.6.0",
+  "description": "在 DeepSeek Harness 里登录并浏览 GitHub：官方 OAuth 设备授权、仓库 / 通知 / 议题与拉取请求 / 搜索。GitHub sign-in and browsing for DSH.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "github",
+    "oauth",
+    "device-flow",
+    "plugin-market"
+  ],
+  "license": "MIT",
+  "author": "dsh-github contributors",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "dsh": ">=0.1.0-rc.6"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-rc <5",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
