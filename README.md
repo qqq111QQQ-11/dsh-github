@@ -18,13 +18,13 @@
 ## 安装
 
 ```bash
-dsh plugin --profile web add dsh-github
+dsh plugin --profile web add github:qqq111QQQ-11/dsh-github
 ```
 
 桌面版：
 
 ```bash
-dsh plugin --profile desktop add dsh-github
+dsh plugin --profile desktop add github:qqq111QQQ-11/dsh-github
 ```
 
 装完重启 DSH，进 **设置 → GitHub**。
